@@ -1,0 +1,59 @@
+<h2 class="text-center ">Previsão do Tempo</h2>
+<div *ngIf="city">
+    <div class="weather-city">
+        <h3>{{city[0].LocalizedName}}, {{city[0].AdministrativeArea.ID}} - {{city[0].AdministrativeArea.CountryID}}</h3>
+        <div class="container">
+            <div class="container">
+                <h2>{{weather.DailyForecasts[0].Temperature.Maximum.Value}}°C
+                    {{weather.DailyForecasts[0].Day.ShortPhrase}}
+                </h2>
+                <p class="weather-today"><i class="fas fa-arrow-up"></i>
+                    {{weather.DailyForecasts[0].Temperature.Maximum.Value}}°
+                    <i class="fas fa-arrow-down" style="margin-left: 20px;"></i><span
+                        style="font-weight: bold;">{{weather.DailyForecasts[0].Temperature.Minimum.Value}}°</span>
+                    <span style="color: rgb(180, 177, 177); margin-left: 30px;">Chuva:</span>
+                    {{weather.DailyForecasts[0].Day.Rain.Value}}mm</p>
+                <p><span style="color: rgb(180, 177, 177);">Vento:</span>
+                    {{weather.DailyForecasts[0].Day.Wind.Speed.Value}}km/h <span
+                        style="color: rgb(180, 177, 177); margin-left: 30px;">Direção:</span>
+                    {{weather.DailyForecasts[0].Day.Wind.Direction.Localized}}</p>
+            </div>
+            <div class="division"></div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-3 col-md-6">
+                        <p>{{weather.DailyForecasts[1].Date | date: 'dd/MM/yyyy'}}</p>
+                        <p class="weather-temp">{{weather.DailyForecasts[1].Temperature.Maximum.Value}}° -
+                            {{weather.DailyForecasts[1].Temperature.Minimum.Value}}° </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <p>{{weather.DailyForecasts[2].Date | date: 'dd/MM/yyyy'}}</p>
+                        <p class="weather-temp">{{weather.DailyForecasts[2].Temperature.Maximum.Value}}° -
+                            {{weather.DailyForecasts[2].Temperature.Minimum.Value}}° </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <p>{{weather.DailyForecasts[3].Date | date: 'dd/MM/yyyy'}}</p>
+                        <p class="weather-temp">{{weather.DailyForecasts[3].Temperature.Maximum.Value}}° -
+                            {{weather.DailyForecasts[3].Temperature.Minimum.Value}}° </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <p>{{weather.DailyForecasts[4].Date | date: 'dd/MM/yyyy'}}</p>
+                        <p class="weather-temp">{{weather.DailyForecasts[4].Temperature.Maximum.Value}}° -
+                            {{weather.DailyForecasts[4].Temperature.Minimum.Value}}° </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToWeather(weatherSearchForm.value)">
+
+        <div class="form-group">
+            <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation"
+                placeholder="Insira aqui o nome da cidade" formControlName="location" />
+            <button type="submit" class="fas fa-search fa-2x errspan"
+                style="background:transparent;border:none"></button>
+        </div>
+    </form>
+</div>

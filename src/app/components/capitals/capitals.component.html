@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="division"></div>
+  <div class="cities-list mx-auto">
+    <h2>Capitais</h2>
+    <div class="row mx-auto">
+      <div class="col-4">
+        <p>Mín</p>
+        <div *ngFor="let temp of weather$ | async">
+          <p>{{temp.DailyForecasts[0].Temperature.Minimum.Value}}°</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <p>Máx</p>
+        <div *ngFor="let temp of weather$ | async">
+          <p>{{temp.DailyForecasts[0].Temperature.Maximum.Value}}°</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <p>Cidades</p>
+        <div *ngIf="weatherCity[0].DailyForecasts">
+          <div *ngFor="let name of cities$ | async">
+            <p>{{name[0].LocalizedName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

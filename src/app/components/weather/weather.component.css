@@ -1,0 +1,87 @@
+h2{
+    font-size: 52px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: 30px !important;
+  }
+  
+  div.weather-city {
+    background: #F4F3F3;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto 0px ;
+  }
+  div h3{
+    font-size: 20px;
+    color: #333;
+  }
+  
+  div h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    margin: 30px 0px;
+  }
+  
+  div p{
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  div i {
+    color: #56C9ED;
+  }
+  
+  div p.weather-temp{
+    color: #56C9ED;
+    font-weight: bold;
+  }
+  
+  div .division{
+    border-top: 3px solid #56C9ED;
+    margin: 20px 0px;
+  }
+  
+  div input {
+    border: 1px solid #fff;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto 0px ;
+    padding: 0 75px;
+    font-size: 20px;
+    height: 55px;
+    background-color: #fff !important;
+    color: rgb(187, 177, 177)!important;
+  }
+  
+  div input::placeholder{
+    color: rgb(187, 177, 177)!important;
+  }
+  
+  .errspan {
+    float: right;
+    right: 170px;
+    margin-top: -43px;
+    position: relative;
+    z-index: 2;
+    color: #333;
+  }
+  
+  @media (max-width: 1125px){
+    .errspan {
+      right: 80px;
+    }
+  }
+  
+  @media (max-width: 990px){
+    .errspan {
+      right: 20px;
+    }
+  }
